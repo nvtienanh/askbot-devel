@@ -35,7 +35,7 @@ FoldedEditor.prototype.getOpenHandler = function () {
     var me = this;
     return function () {
         if (askbot.data.userIsReadOnly === true) {
-            notify.show(gettext('Sorry, you have only read access'));
+            notify.show(gettext('Sorry, you have only read access'));            
         } else {
             promptBox.hide();
             editorBox.show();
@@ -79,7 +79,7 @@ FoldedEditor.prototype.decorate = function (element) {
     var placeHolder = element.find('.editor-placeholder');
     editor.setText(placeHolder.data('draftAnswer'));
     placeHolder.append(editor.getElement());
-    //editor.start();
+    // editor.start();
 
     var openHandler = this.getOpenHandler();
     element.click(openHandler);
