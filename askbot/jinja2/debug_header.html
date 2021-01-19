@@ -14,6 +14,12 @@
             use --insecure flag with the runserver command.
         </p>
     </div>
+    {% else %}
+    <div>
+        <p>
+            {{ new_answer_allowed }}
+        </p>
+    </div>
     {% endif %}
 {% else %}
     {% if settings.DEBUG == True %}

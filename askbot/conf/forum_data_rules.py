@@ -96,7 +96,7 @@ settings.register(
     livesettings.BooleanValue(
         FORUM_DATA_RULES,
         'ALLOW_ASK_UNREGISTERED',
-        default=False,
+        default=True,
         description=_('Allow asking without registration'),
         help_text=_('Enabling ReCaptcha is recommended with this feature')
     )

@@ -15,6 +15,7 @@ AnswerForm.prototype.getAfterOpenHandler = function () {
 
 AnswerForm.prototype.decorate = function (element) {
     this._element = element;
+    alert("))))))")
     /* todo: move folded editor inside the answer form! */
     var editorBox = element.closest('.folded-editor');
     if (editorBox.length) {

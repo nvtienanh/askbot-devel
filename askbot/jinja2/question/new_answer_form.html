@@ -27,7 +27,7 @@
             {% set draft_answer=answer.text.value() %}
             <div class="form-group editor-placeholder"
                 {% if draft_answer %}data-draft-answer="{{ draft_answer|escape }}"{% endif %}>
-            </div>
+            </div>            
             <div class="answer-options">
                 {% if settings.WIKI_ON %}
                     {{ macros.checkbox_in_div(answer.wiki) }}
