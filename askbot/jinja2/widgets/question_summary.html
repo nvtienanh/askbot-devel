@@ -9,7 +9,7 @@
              {%- endif -%}">
              <span class="item-count">{{ thread.view_count|humanize_counter }}</span>
             <div>
-            {% trans cnt=thread.view_count %}view{% pluralize %}views{% endtrans %}
+            {% trans cnt=thread.view_count %}Lượt xem{% pluralize %}Lượt xem{% endtrans %}
             </div>
         </div>
         {% set answer_count = thread.get_answer_count(visitor) %}
@@ -38,7 +38,7 @@
                     {%- endif -%}">
             <span class="item-count">{{question.score|humanize_counter}}</span>
             <div>
-            {% trans cnt=question.score %}vote{% pluralize %}votes{% endtrans %}
+            {% trans cnt=question.score %}bình chọn{% pluralize %}bình chọn{% endtrans %}
             </div>
         </div>
         <div class="clearfix"></div>

@@ -1,5 +1,5 @@
 --trusted-host github.com
-django-appconf
+django-appconf==1.0.3
 akismet==1.0.1
 beautifulsoup4<=4.7.1
 django-avatar>=4.0

@@ -1,8 +1,18 @@
 
 # Install
-source py38/Scripts/activate
+```bash
+source py39/Scripts/activate
 
+python -m pip install --upgrade pip
 pip install -r askbot_requirements.txt
+pip install psycopg2
+python setup.py develop
+askbot-setup \
+    -n ./askbot_app \
+    -e 1 -d askbotfortox -u askbot -p askB0T --db-host=localhost --db-port=5432 --logfile-name=stdout --no-secret-key --create-project container-uwsgi
+    --create-project django
+SECRET_KEY=whatever DJANGO_SETTINGS_MODULE=askbot_app.settings python manage.py collectstatic --noinput
+```
 
 export DB_TYPE=postgres
 export DB_USER=askbot
@@ -11,7 +21,7 @@ export DB_HOST=localhost
 export DB_PORT=5432
 export DB_NAME=askbotfortox
 export DATABASE_URL="postgres://askbot:askB0T@localhost:5432/askbotfortox"
-askbot-setup -n ./askbot-site -e 1 -d askbotfortox -u askbot -p askbotPW --db-host=localhost --db-port=5432 --logfile-name=stdout --no-secret-key --create-project container-uwsgi
+askbot-setup -r ./askbot_app -e 1 -d askbotfortox -u askbot -p askB0T --db-host=localhost --db-port=5432 --logfile-name=stdout --no-secret-key --create-project container-uwsgi
 SECRET_KEY=whatever DJANGO_SETTINGS_MODULE=askbot_site.settings python manage.py collectstatic --noinput
 SECRET_KEY=whatever DJANGO_SETTINGS_MODULE=askbot_site.settings DEBUG_MODE=True python manage.py runserver 0.0.0.0:8000  --insecure
 

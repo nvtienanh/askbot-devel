@@ -66,3 +66,4 @@ bower_components/
 .tox
 coverage_html_report
 /py39/
+/askbot_app/
