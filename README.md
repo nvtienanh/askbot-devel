@@ -10,9 +10,15 @@ python setup.py develop
 askbot-setup 
 python manage.py migrate
 python manage.py runserver 0.0.0.0:8000  --insecure
+python manage.py dumpdata --format=json-no-uescape > data2.json
+python manage.py loaddata  data.json
 SECRET_KEY=whatever DJANGO_SETTINGS_MODULE=askbot_app.settings python manage.py collectstatic --noinput
 ```
+#with your sqlite settings
+python manage.py dumpdata > data.json
 
+#with your mysql settings
+python manage.py loaddata  data.json
 export DB_TYPE=postgres
 export DB_USER=askbot
 export DB_PASS=askB0T
