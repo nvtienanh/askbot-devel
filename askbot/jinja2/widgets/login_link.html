@@ -18,5 +18,5 @@
 {% else %}
     {% set next_url=request.path|clean_login_url|escape %}
     <a href="{{ settings.LOGIN_URL }}?next={{ encode_jwt({'next_url': next_url}) }}"
-    >{% trans %}Hi there! Please sign in{% endtrans %}</a>
+    >{% trans %}Đăng nhập{% endtrans %}</a>
 {% endif %}

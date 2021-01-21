@@ -26,7 +26,7 @@ settings.register(
     livesettings.BooleanValue(
         QUESTION_LISTS,
         'UNANSWERED_SCOPE_ENABLED',
-        default=True,
+        default=False,
         description=_('Enable "Unanswered Questions" selector'),
         help_text=_('At least one of these selectors must be enabled')
     )

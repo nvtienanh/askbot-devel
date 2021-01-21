@@ -343,7 +343,7 @@ for the purposes of the AJAX comment editor #}
         </a>
     {% else %}
         {% if settings.COMMENTS_REVERSED == False %}
-            <a class="js-open-editor-btn">{% trans %}add a comment{% endtrans %}</a>
+            <a class="js-open-editor-btn">{% trans %}Bình luận{% endtrans %}</a>
         {% endif %}
     {% endif %}
 {%- endmacro -%}
@@ -450,7 +450,7 @@ for the purposes of the AJAX comment editor #}
     >
         {% if settings.COMMENTS_REVERSED %}
             <div class="js-open-editor-btn new-comment-box">
-                {% set prompt=gettext('add a comment...') %}
+                {% set prompt=gettext('Viết bình luận...') %}
                 {% include "widgets/mock_editor.html" %}
             </div>
         {% endif %}

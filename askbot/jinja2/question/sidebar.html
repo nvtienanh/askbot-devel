@@ -8,10 +8,10 @@
   <h2>{{ settings.WORDS_QUESTION_TOOLS|escape }}</h2>
     <button class="js-follow-question button large"
         data-is-on="{{ favorited|as_js_bool }}"
-        data-off-prompt-text="{% trans %}Unfollow{% endtrans %}"
-        data-on-prompt-text="{% trans %}Follow{% endtrans %}"
-        data-on-state-text="{% trans %}Following{% endtrans %}"
-        data-off-state-text="{% trans %}Follow{% endtrans %}"
+        data-off-prompt-text="{% trans %}Hủy theo dõi{% endtrans %}"
+        data-on-prompt-text="{% trans %}Theo dõi{% endtrans %}"
+        data-on-state-text="{% trans %}Đang theo dõi{% endtrans %}"
+        data-off-state-text="{% trans %}Theo dõi{% endtrans %}"
         data-toggle-url="{{ url('toggle_follow_question') }}"
     >
         {% if favorited %}
@@ -24,7 +24,7 @@
     <div class="js-question-follower-count">
         {% set follower_count = thread.favourite_count %}
         {% if follower_count > 0 %}
-            {% trans count=follower_count %}{{count}} follower{% pluralize %}{{count}} followers{% endtrans %}
+            {% trans count=follower_count %}{{count}} người theo dõi{% pluralize %}{{count}} người theo dõi{% endtrans %}
         {% endif %}
     </div>
     <div class="notify-sidebar">
@@ -133,15 +133,15 @@
 {% if settings.SIDEBAR_QUESTION_SHOW_META %}
 <div class="box statsWidget">
     <div class="clearfix"></div>
-    <h2>{% trans %}Stats{% endtrans %}</h2>
+    <h2>{% trans %}Thống kê{% endtrans %}</h2>
     <p>
-        {% trans %}Asked{% endtrans %}: <strong>{{ macros.timeago(question.added_at) }}</strong>
+        {% trans %}Đã báo cáo{% endtrans %}: <strong>{{ macros.timeago(question.added_at) }}</strong>
     </p>
     <p>
-        {% trans %}Seen{% endtrans %}: <strong>{{ thread.view_count|intcomma }} {% trans %}times{% endtrans %}</strong>
+        {% trans %}Đã xem{% endtrans %}: <strong>{{ thread.view_count|intcomma }} {% trans %}lần{% endtrans %}</strong>
     </p>
     <p>
-        {% trans %}Last updated{% endtrans %}: <strong title="{{ thread.last_activity_at }}">{{thread.last_activity_at|diff_date}}</strong>
+        {% trans %}Cập nhật{% endtrans %}: <strong title="{{ thread.last_activity_at }}">{{thread.last_activity_at|diff_date}}</strong>
     </p>
 </div>
 {% endif %}
